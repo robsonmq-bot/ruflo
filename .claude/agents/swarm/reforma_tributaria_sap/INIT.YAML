@@ -1,0 +1,27 @@
+init:
+  swarm: Reforma_Tributaria_SAP
+  description: Inicialização do swarm completo da Reforma Tributária.
+
+  load_agents:
+    - Agente_Crawler_ReformaTributaria
+    - Agente_Leitor_Documentos
+    - Agente_Classificador_Topicos
+    - Agente_Resumo_Executivo
+    - Agente_Resumo_Tecnico_Fiscal
+    - Agente_Mapeador_Processos_SAP
+    - Agente_Localizacao_BR_SAP
+    - Agente_Designer_Cenarios_Teste
+    - Agente_Gerador_Relatorio_Semanal
+    - Agente_Gerenciador_Tarefas_Projeto
+
+  load_workflows:
+    - Monitoramento_Diario
+    - Relatorio_Semanal
+
+  load_goal:
+    - Monitoramento_Reforma_Tributaria
+
+  startup_actions:
+    - "Executar varredura inicial de fontes."
+    - "Gerar primeiro relatório base."
+    - "Criar backlog inicial."

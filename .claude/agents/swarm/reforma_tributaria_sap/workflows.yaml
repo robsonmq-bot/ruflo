@@ -1,0 +1,21 @@
+workflows:
+
+  Monitoramento_Diario:
+    trigger: daily
+    description: Fluxo diário de monitoramento da Reforma Tributária.
+    steps:
+      - Agente_Crawler_ReformaTributaria
+      - Agente_Leitor_Documentos
+      - Agente_Classificador_Topicos
+      - Agente_Resumo_Executivo
+      - Agente_Resumo_Tecnico_Fiscal
+      - Agente_Mapeador_Processos_SAP
+      - Agente_Localizacao_BR_SAP
+      - Agente_Designer_Cenarios_Teste
+      - Agente_Gerenciador_Tarefas_Projeto
+
+  Relatorio_Semanal:
+    trigger: weekly
+    description: Geração automática de relatório semanal consolidado.
+    steps:
+      - Agente_Gerador_Relatorio_Semanal

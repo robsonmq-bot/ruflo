@@ -1,0 +1,69 @@
+dashboard:
+  name: Dashboard_Reforma_Tributaria
+  description: Painel de monitoramento contínuo da Reforma Tributária.
+
+  sections:
+
+    - title: Atualizações Recentes
+      type: list
+      source: Agente_Crawler_ReformaTributaria
+      fields:
+        - título
+        - data
+        - tipo
+        - link
+
+    - title: Classificação de Impacto
+      type: table
+      source: Agente_Classificador_Topicos
+      columns:
+        - categoria
+        - impacto
+        - urgência
+        - tipo_de_impacto
+
+    - title: Resumo Executivo
+      type: text
+      source: Agente_Resumo_Executivo
+
+    - title: Análise Técnica Fiscal
+      type: text
+      source: Agente_Resumo_Tecnico_Fiscal
+
+    - title: Impactos SAP
+      type: table
+      source: Agente_Mapeador_Processos_SAP
+      columns:
+        - módulo
+        - processo
+        - objeto_SAP
+        - impacto
+
+    - title: Recomendações SAP / LOC BR
+      type: list
+      source: Agente_Localizacao_BR_SAP
+      fields:
+        - nota_SAP
+        - customizing
+        - recomendação
+        - gap
+
+    - title: Cenários de Teste SAP
+      type: list
+      source: Agente_Designer_Cenarios_Teste
+      fields:
+        - nome
+        - objetivo
+        - passos
+
+    - title: Backlog de Ações
+      type: kanban
+      source: Agente_Gerenciador_Tarefas_Projeto
+      columns:
+        - prioridade_alta
+        - prioridade_media
+        - prioridade_baixa
+
+    - title: Relatório Semanal
+      type: text
+      source: Agente_Gerador_Relatorio_Semanal

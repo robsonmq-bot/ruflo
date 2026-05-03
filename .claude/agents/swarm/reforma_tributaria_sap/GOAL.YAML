@@ -1,0 +1,35 @@
+goal:
+  name: Monitoramento_Reforma_Tributaria
+  description: >
+    Monitorar diariamente todas as atualizações da Reforma Tributária (IBS, CBS, ICMS, transição),
+    gerar resumos executivo e técnico, mapear impactos em SAP S/4HANA, criar cenários de teste,
+    atualizar backlog e consolidar relatório semanal.
+
+  objectives:
+    - Coletar automaticamente notícias, regulamentos, PDFs e publicações oficiais.
+    - Classificar documentos por tema, impacto e urgência.
+    - Gerar resumo executivo para gestão.
+    - Produzir análise fiscal detalhada.
+    - Mapear impactos em processos SAP S/4HANA e LOC BR.
+    - Criar cenários de teste SAP.
+    - Gerar backlog de ações.
+    - Consolidar relatório semanal.
+
+  success_criteria:
+    - Atualizações diárias processadas sem intervenção manual.
+    - Relatório semanal gerado automaticamente.
+    - Backlog atualizado sempre que houver mudança relevante.
+    - Impactos SAP mapeados com consistência.
+    - Cenários de teste completos e acionáveis.
+
+  agents_involved:
+    - Agente_Crawler_ReformaTributaria
+    - Agente_Leitor_Documentos
+    - Agente_Classificador_Topicos
+    - Agente_Resumo_Executivo
+    - Agente_Resumo_Tecnico_Fiscal
+    - Agente_Mapeador_Processos_SAP
+    - Agente_Localizacao_BR_SAP
+    - Agente_Designer_Cenarios_Teste
+    - Agente_Gerador_Relatorio_Semanal
+    - Agente_Gerenciador_Tarefas_Projeto

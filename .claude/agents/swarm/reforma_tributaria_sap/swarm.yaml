@@ -1,0 +1,20 @@
+name: Reforma_Tributaria_SAP
+description: Swarm avançado para monitoramento da Reforma Tributária e impactos em SAP S/4HANA.
+
+goals:
+  - Monitorar atualizações da Reforma Tributária (IBS, CBS, ICMS, transição).
+  - Gerar resumos executivo e técnico-fiscal.
+  - Mapear impactos em processos SAP S/4HANA e LOC BR.
+  - Produzir relatório semanal e backlog de ações do projeto.
+
+agents:
+  - Agente_Crawler_ReformaTributaria
+  - Agente_Leitor_Documentos
+  - Agente_Classificador_Topicos
+  - Agente_Resumo_Executivo
+  - Agente_Resumo_Tecnico_Fiscal
+  - Agente_Mapeador_Processos_SAP
+  - Agente_Localizacao_BR_SAP
+  - Agente_Designer_Cenarios_Teste
+  - Agente_Gerador_Relatorio_Semanal
+  - Agente_Gerenciador_Tarefas_Projeto
